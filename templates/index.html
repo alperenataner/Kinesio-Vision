@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinesio-Vision | Modern Yapay Zeka Video Analizi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <h1>Kinesio-Vision</h1>
+            </div>
+            <p class="subtitle">Vücut hareketlerinizi yapay zeka ile saniyeler içinde analiz edin.</p>
+        </header>
+
+        <main>
+            <div class="glass-panel" id="upload-panel">
+                <div class="upload-area" id="drop-zone">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <h2>Video Yükleyin</h2>
+                    <p id="upload-hint">Sürükleyip bırakın veya bilgisayarınızdan seçin.</p>
+                    <div id="file-name-display" class="hidden file-name-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        <span id="selected-file-name">video.mp4</span>
+                    </div>
+                    <input type="file" id="file-input" accept="video/mp4,video/x-m4v,video/*" hidden>
+                    <button class="btn-primary" id="browse-btn">Dosya Seç</button>
+                    <button class="btn-secondary hidden" id="upload-btn" style="margin-left: 10px;">Analizi Başlat</button>
+                </div>
+            </div>
+
+            <div class="glass-panel hidden" id="progress-panel">
+                <h2>Analiz Ediliyor...</h2>
+                <p class="progress-text" id="progress-text">Bu işlem videonun uzunluğuna göre biraz sürebilir.</p>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <div class="percentage" id="percentage">0%</div>
+            </div>
+
+            <div class="glass-panel hidden result-panel-wide" id="result-panel">
+                <div class="dashboard">
+                    <div class="video-section">
+                        <h2>Analiz Tamamlandı!</h2>
+                        <div class="video-container">
+                            <video id="result-video" controls autoplay>
+                                Tarayıcınız video oynatmayı desteklemiyor.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="stats-section">
+                        <h2>Yapay Zeka Raporu</h2>
+                        
+                        <div class="stat-card primary-stat">
+                            <div class="stat-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Tespit Edilen Hareket</h3>
+                                <div class="badge glowing" id="detected-class">Hesaplanıyor...</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Analiz Durumu</h3>
+                                <p class="text-success">Başarılı</p>
+                            </div>
+                        </div>
+                        
+                        <button class="btn-primary full-width" id="reset-btn" style="margin-top: 2rem;">Yeni Video Analiz Et</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2026 Kinesio-Vision. Modernleştirilmiş Sürüm.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

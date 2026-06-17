@@ -1,0 +1,14 @@
+Epoch [20/150] | Kayıp (Loss): 1.0662 | Doğruluk: %58.29
+Epoch [30/150] | Kayıp (Loss): 0.9436 | Doğruluk: %62.36
+Epoch [40/150] | Kayıp (Loss): 0.9034 | Doğruluk: %65.53
+Epoch [50/150] | Kayıp (Loss): 0.7901 | Doğruluk: %70.55
+Epoch [60/150] | Kayıp (Loss): 0.7237 | Doğruluk: %72.54
+Epoch [70/150] | Kayıp (Loss): 0.6887 | Doğruluk: %73.72
+Epoch [80/150] | Kayıp (Loss): 0.6476 | Doğruluk: %75.43
+Epoch [90/150] | Kayıp (Loss): 0.6178 | Doğruluk: %75.99
+Epoch [100/150] | Kayıp (Loss): 0.5693 | Doğruluk: %77.32
+Epoch [110/150] | Kayıp (Loss): 0.5520 | Doğruluk: %76.99
+Epoch [120/150] | Kayıp (Loss): 0.5424 | Doğruluk: %79.02
+Epoch [130/150] | Kayıp (Loss): 0.5025 | Doğruluk: %79.55
+Epoch [140/150] | Kayıp (Loss): 0.4804 | Doğruluk: %81.20
+Epoch [150/150] | Kayıp (Loss): 0.4784 | Doğruluk: %81.82
